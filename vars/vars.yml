@@ -1,0 +1,9 @@
+---
+service:  console
+project_root: /data/xxxxxx/
+project_files: /data/xxxxx/
+project_logs: /var/log/
+project_repo: git@github.com:XXXXXXXXXXXXXXXXX
+branch: master
+deploy_key: /home/xxxx/.ssh/xxxxxx
+config_src: config_prod

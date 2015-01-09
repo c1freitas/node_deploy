@@ -1,0 +1,7 @@
+#VERSION: 0.0.2
+# General Deployment tasks for existing Alltm console
+---
+  # Restart the service
+  - name: Start | start the console
+    service: name={{ service }} state=started
+    sudo: yes

@@ -1,0 +1,8 @@
+#VERSION: 0.0.2
+# General Deployment tasks for existing Alltm console
+---
+  # Stop the Service
+  - name: Stop | stop the console
+    service: name={{ service }} state=stopped
+    sudo: yes
+    ignore_errors: True

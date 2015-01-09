@@ -1,0 +1,13 @@
+#VERSION: 0.0.2
+# Production Deployment
+---
+- hosts: mare
+  vars_files:
+    - vars/vars.yml
+
+  roles:
+    - forever
+    - install
+    - stop
+    - deploy
+    - start

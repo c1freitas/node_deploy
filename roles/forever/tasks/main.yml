@@ -1,0 +1,5 @@
+---
+- name: Forever | Install Forever
+  sudo: yes
+  npm: name=forever global=yes
+  tags: forever

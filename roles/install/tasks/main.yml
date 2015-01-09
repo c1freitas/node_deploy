@@ -1,0 +1,5 @@
+---
+- name: Install | Install the Upstart Job
+  sudo: yes
+  template: src=mare_console.conf dest=/etc/init/
+  tags: install

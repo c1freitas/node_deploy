@@ -1,0 +1,19 @@
+#VERSION: 0.0.2
+# General Deployment tasks console
+---
+  - name: Deploy | Make project directory
+    file: path={{ project_root }} owner=kombi state=directory mode=0774
+    sudo: true
+  - name: Deploy | Make file directory
+    file: path={{ project_files }} owner=kombi state=directory mode=0774
+    sudo: true
+  # Git pull
+  - name: Deploy | Pull sources from the repository.
+    git: repo={{ project_repo }} dest={{ project_root }} version={{ branch }} key_file={{ deploy_key }} accept_hostkey=yes update=yes
+    ignore_errors: True
+  # npm Install
+  - name: Deploy | Install Node Modules
+    npm: path={{ project_root }} production=yes
+  # copy config files 
+  - name: Deploy | send config files to server app
+    copy: src={{ config_src }}/ dest={{ project_root }}/config/ owner=kombi mode=0664
